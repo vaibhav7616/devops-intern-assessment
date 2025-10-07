@@ -16,26 +16,13 @@ It demonstrates the ability to:
 - **CI/CD Automation:** GitHub Actions
 - **Registry:** GitHub Container Registry (GHCR)
 - **Orchestration:** Kubernetes (Minikube)
-- **OS Used:** Ubuntu 22.04 LTS
+- **OS Used:** Ubuntu 22.04 LT
 
----
-
-## ⚙️ Server Requirements
-
-| Resource | Recommended | Minimum |
-|-----------|--------------|----------|
-| CPU | 4 vCPU | 2 vCPU |
-| RAM | 8 GB | 4 GB |
-| Disk | 50 GB | 25 GB |
-
-For AWS: `t3.medium` **works**, but use swap and lower Minikube resources.
-
----
 
 ##  Project setup 
 ## Step 1: Clone the Repository
    git clone https://github.com/vaibhav7616/devops-intern-assessment.git
-  cd devops-intern-assessment
+   cd devops-intern-assessment
 
 ## Step 2: Install Dependencies
    npm install
