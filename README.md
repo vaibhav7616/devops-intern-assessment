@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 DevOps Internship Assessment
 
-## Getting Started
+## 📘 Overview
+This project is created as part of the **DevOps Internship Assessment**.  
+It demonstrates the ability to:
 
-First, run the development server:
+- Containerize a **Next.js** application using **Docker**
+- Automate builds and push images to **GitHub Container Registry (GHCR)** using **GitHub Actions**
+- Deploy the containerized application to **Kubernetes (Minikube)**
 
-```bash
+---
+
+## 🧰 Tech Stack
+- **Framework:** Next.js (Node.js 18)
+- **Containerization:** Docker
+- **CI/CD Automation:** GitHub Actions
+- **Registry:** GitHub Container Registry (GHCR)
+- **Orchestration:** Kubernetes (Minikube)
+- **OS Used:** Ubuntu 22.04 LTS
+
+---
+
+## ⚙️ Server Requirements
+
+| Resource | Recommended | Minimum |
+|-----------|--------------|----------|
+| CPU | 4 vCPU | 2 vCPU |
+| RAM | 8 GB | 4 GB |
+| Disk | 50 GB | 25 GB |
+
+For AWS: `t3.medium` **works**, but use swap and lower Minikube resources.
+
+---
+
+##  Project setup 
+## Step 1: Clone the Repository
+   git clone https://github.com/vaibhav7616/devops-intern-assessment.git
+  cd devops-intern-assessment
+
+## Step 2: Install Dependencies
+   npm install
+
+## Step 3: Run Locally
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit: http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+##  Docker Setup (Local)
+##  Build Docker Image
+    docker build -t ghcr.io/vaibhav7616/devops-intern-assessment:latest .
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Run Container
+  docker run -p 3000:3000 ghcr.io/vaibhav7616/devops-intern-assessment:latest
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+Test it at: http://localhost:3000
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## GitHub Actions Workflow (CI/CD)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+File Path: .github/workflows/ci-cd.yml
+## GHCR Image
+ghcr.io/vaibhav7616/devops-intern-assessment:latest
 
-## Deploy on Vercel
+## Kubernetes Deployment (Minikube)
+   Deployment Files
+   Inside the k8s/ 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   
+## Apply to Minikube
+   kubectl apply -f k8s/deployment.yaml
+   kubectl apply -f k8s/service.yaml
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Verify
+   kubectl get pods
+   kubectl get svc
+
+## Access App
+  minikube service nextjs-service --url
+
