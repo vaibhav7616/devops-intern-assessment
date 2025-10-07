@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: nextjs
-          image: ghcr.io/<GITHUB_USERNAME>/<REPO_NAME>:latest
+          image: ghcr.io/vaibhav7616/devops-internship-assessment:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
