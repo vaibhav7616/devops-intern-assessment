@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: nextjs
-          image: ghcr.io/vaibhav7616/devops-internship-assessment:latest
+          image: ghcr.io/vaibhav7616/devops-intern-assessment:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
